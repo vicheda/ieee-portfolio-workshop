@@ -8,7 +8,7 @@ export default function ContactMe() {
           className="contact-title"
         />
         <p className="contact-description">
-          I'd love to hear from you! Feel free to reach out with any questions or opportunities.
+          I'd love to connect! Feel free to reach out with any questions or opportunities.
         </p>
         <div className="contact-buttons">
           <a href="mailto:your-email@example.com" className="contact-button">

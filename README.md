@@ -1,8 +1,8 @@
 # Portfolio Workshop
 
-A modern, responsive portfolio website built with **Next.js 16**, **React 19**, **TypeScript**, and **Tailwind CSS 4**.
+A modern, responsive portfolio website built with **Next.js**, **TypeScript**
 
-## 🚀 Features
+## Features
 
 - **Hero Section**: Eye-catching introduction with your name and tagline
 - **About Me**: Tell your story and highlight your skills
@@ -12,7 +12,7 @@ A modern, responsive portfolio website built with **Next.js 16**, **React 19**, 
 - **Modern Styling**: Built with Tailwind CSS for clean, maintainable styles
 - **TypeScript**: Type-safe code for better development experience
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 portfolio-workshop/
