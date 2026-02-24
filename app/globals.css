@@ -1,18 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 * {
   margin: 0;
   padding: 0;
-  /* makes sure padding and border are included in the element's total width and height */
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
-
-body {
-  font-family: 'Space Mono', monospace;
-  color: #333;
-  overflow-x: hidden;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -23,100 +15,94 @@ html {
   --primary-color: #0071bc;
   --secondary-color: #38b6ff;
 }
-/* Hero Section */
-/* 100vh → 100% of viewport height (full screen)
-display: flex → Enables flexbox (makes centering easy!)
-justify-content + align-items → Centers content both ways
-flex-direction: column → Stacks children vertically */
-.hero-section {
-  height: 100vh;           /* Full viewport height */
-  display: flex;           /* Flexbox layout */
-  justify-content: center; /* Center horizontally */
-  align-items: center;     /* Center vertically */
-  flex-direction: column;  /* Stack items vertically */
+
+body {
+  font-family: "space mono", monospace;
   background: var(--background-color);
-  position: relative;      /* For absolute positioned children */
-  overflow: hidden;        /* Hide overflow */
-}
-
-.hero-name-container {
-  width: 100%;
-  height: 100%;
-  margin-bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-.hero-name {
-  width: 100%;
-  height: 100%;
-  max-height: none;
-  display: block;
-  filter: drop-shadow(3px 3px 8px rgba(0, 0, 0, 0.15));
-  object-fit: contain;
-}
-
-.hero-subtitle {
-  font-size: 24px;
-  margin-top: 20px;
-  font-style: italic;
   color: var(--text-color);
 }
 
-/* position: absolute → Position elements freely
-@keyframes → Defines custom animations
-animation: float 3s ease-in-out infinite → Use the float animation, 3 seconds, repeat forever
-transform: translateY() → Moves element up/down
-transform: rotate() → Rotates element */
+.hero-section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
 
-.decorative-elements {
-  position: absolute;
-  width: 100%;
+.hero-name-container {
+  margin-bottom: 0;
+  padding: 20px;
+}
+
+.hero-title {
+  font-size: 64px;
+  color: var(--text-color);
+}
+/* navbar on top  */
+/* .sidebar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  flex-direction: row;
+}
+.sidebar-content {
+  gap: 20px;
+  background: var(--primary-color);
+  padding: 20px 15px;
+  border-radius: 50px;
+  border: 2px solid var(--primary-color);
+  justify-content: center;
+} */
+
+/* navbar on the side */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  bottom: 20px;
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   height: 100%;
-  top: 0;
-  left: 0;
-  pointer-events: none;  /* Can't click on decorations */
+  background: var(--primary-color);
+  padding: 20px 15px;
+  border-radius: 50px;
+  border: 2px solid var(--primary-color);
+  justify-content: center;
 }
 
-.star {
-  position: absolute;
-  width: 60px;
-  height: 60px;
+.sidebar-link {
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  padding: 8px 12px;
+  padding-left: 12px;
+  transition: all 0.3s ease;
+  text-align: left;
+  white-space: nowrap;
+  text-decoration: none;
 }
-
-.star-1 {
-  top: 10%;
-  right: 20%;
+.sidebar-link:hover {
+  color: var(--secondary-color);
+  transform: translateX(5px); 
 }
-
-.spiral {
-  position: absolute;
-  width: 80px;
-  height: 80px;
-}
-
-.spiral-1 {
-  top: 15%;
-  left: 15%;
-}
-
-.spiral-2 {
-  bottom: 20%;
-  right: 15%;
-}
-
-
-/* display: flex on container → Children sit side by side
-gap: 60px → Adds space between the two columns
-flex: 1 on both children → Each takes equal space (50/50 split)
-max-width: 1200px → Keeps content readable on large screens */
 
 /* About Section */
 .about-section {
-  min-height: 100vh;      /* At least full screen */
-  padding: 80px 100px;    /* Space around content */
+  min-height: 100vh;
+  padding: 80px 100px;
   background: var(--background-color);
   display: flex;
   align-items: center;
@@ -124,25 +110,25 @@ max-width: 1200px → Keeps content readable on large screens */
 }
 
 .about-container {
-  display: flex;          /* Side by side layout */
-  gap: 60px;             /* Space between columns */
-  max-width: 1200px;     /* Don't get too wide */
-  align-items: center;   /* Align vertically in center */
+  display: flex;
+  gap: 60px;
+  max-width: 1200px;
+  align-items: center;
 }
 
 .about-image {
-  flex: 1;               /* Take up 50% of space */
+  flex: 1;
   max-width: 400px;
   position: relative;
 }
 
 .about-content {
-  flex: 1;               /* Take up 50% of space */
+  flex: 1;
 }
 
 .image-placeholder {
   width: 100%;
-  aspect-ratio: 3/4;     /* 3:4 ratio - portrait orientation */
+  aspect-ratio: 3/4;
   background: var(--background-color);
   border-radius: 15px;
   display: flex;
@@ -156,34 +142,15 @@ max-width: 1200px → Keeps content readable on large screens */
   font-weight: bold;
 }
 
-.about-swirl {
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  bottom: -30px;
-  right: -30px;
-}
-.about-title {
-  margin-bottom: 20px;
-}
-
-.about-me-image {
-  width: 500px;
-  height: auto;
-  display: block;
-}
-
 .about-greeting {
   font-size: 48px;
   margin-bottom: 20px;
-  font-family: 'Bradley Hand', 'Comic Sans MS', cursive;
   color: #333;
 }
 
 .about-description {
   font-size: 18px;
-  line-height: 1.8;      /* 1.8x spacing between lines = easier to read */
-  font-family: 'Courier New', monospace;
+  line-height: 1.8;
   color: var(--text-color);
 }
 /* Projects Section */
@@ -196,21 +163,18 @@ max-width: 1200px → Keeps content readable on large screens */
 .projects-title {
   font-size: 48px;
   margin-bottom: 60px;
-  font-family: 'Bradley Hand', 'Comic Sans MS', cursive;
   color: var(--text-color);
+  text-align: center;
 }
 
 .projects-grid {
-  display: grid;                    /* CSS Grid! */
-  
-  /* Auto-fit: create as many columns as fit */
-  /* minmax(300px, 1fr): each column is at least 300px, maximum 1 fraction */
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  
-  gap: 40px;                        /* Space between cards */
+  gap: 40px;
   max-width: 1200px;
-  margin: 0 auto;                   /* Center the grid */
+  margin: 0 auto;
 }
+
 .project-card {
   position: relative;
   border: 3px solid var(--text-color);
@@ -221,7 +185,6 @@ max-width: 1200px → Keeps content readable on large screens */
 
 .project-placeholder {
   aspect-ratio: 16/10;
-  /* background: var(--background-color); */
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -250,7 +213,7 @@ max-width: 1200px → Keeps content readable on large screens */
   bottom: 20px;
   right: 20px;
   border: 2px solid #333;
-  border-radius: 50%;         /* Perfect circle */
+  border-radius: 50%;
   width: 50px;
   height: 50px;
   font-size: 24px;
@@ -276,7 +239,7 @@ max-width: 1200px → Keeps content readable on large screens */
 }
 
 .contact-title {
-  width: 100%;
+  font-size: 48px;
   height: auto;
   max-width: 800px;
   margin-bottom: 40px;
@@ -300,61 +263,11 @@ max-width: 1200px → Keeps content readable on large screens */
 .contact-button {
   padding: 15px 40px;
   font-size: 18px;
-  background: #ffad32;
-  color: white;
+  background: var(--background-color);
+  color: #333;
   border: 2px solid #333;
   border-radius: 10px;
   text-decoration: none;
   cursor: pointer;
   font-weight: bold;
-  transition: background 0.3s ease;
-}
-
-/* Sidebar Navigation */
-.sidebar {
-  position: fixed;
-  left: 0;
-  top: 20px;
-  bottom: 20px;
-  z-index: 1000;
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.sidebar-content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  height: 100%;
-  background: var(--primary-color);
-  padding: 20px 15px;
-  border-radius: 50px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  border: 2px solid var(--primary-color);
-  justify-content: center;
-}
-
-.sidebar-link {
-  background: none;
-  border: none;
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 600;
-  color: white;
-  cursor: pointer;
-  padding: 8px 12px;
-  border-left: 3px solid transparent;
-  padding-left: 12px;
-  transition: all 0.3s ease;
-  text-align: left;
-  white-space: nowrap;
-  text-decoration: none;
-}
-
-.sidebar-link:hover {
-  color: var(--secondary-color);
-  transform: translateX(5px); /* this makes the link move slightly to the right */
 }

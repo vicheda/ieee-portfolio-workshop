@@ -7,21 +7,11 @@ export default function AboutMe() {
           <div className="image-placeholder">
             <span>image</span>
           </div>
-          <img
-            src="/assets/swirl.png"
-            alt="swirl"
-            className="about-swirl"
-          />
         </div>
 
         {/* Text on right */}
         <div className="about-content">
           <div className="about-title">
-            <img
-              src="/assets/aboutme.png"
-              alt="About me"
-              className="about-me-image"
-            />
             <div className="about-greeting">hey im veee!</div>
           </div>
           <p className="about-description">
